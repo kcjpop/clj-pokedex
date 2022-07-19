@@ -11,7 +11,7 @@
                  [ring "1.8.1"]
                  [seancorfield/next.jdbc "1.2.659"]
                  [sqlitejdbc "0.5.6"]
-                 [org.clojure/clojure "1.10.1"]]
+                 [org.clojure/clojure "1.11.1"]]
   :injections [(require 'hashp.core)]
   :main ^:skip-aot cheffy.server
   :target-path "target/%s"
