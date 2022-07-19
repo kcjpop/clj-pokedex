@@ -1,7 +1,8 @@
 (ns cheffy.server
   (:require [ring.adapter.jetty :as jetty]
             [integrant.core :as ig]
-            [cheffy.router :as router])
+            [cheffy.router :as router]
+            [next.jdbc :as jdbc])
   (:gen-class))
 
 
@@ -12,8 +13,8 @@
 (def config
   {:server/jetty {:handler (ig/ref :cheffy/app)
                   :port 5000}
-   :cheffy/app {:jdbc-url (ig/ref :db/sqlite)}
-   :db/sqlite {:dbtype "sqlite" :dbname "resources/test.db"}})
+   :cheffy/app {:db (ig/ref :db/sqlite)}
+   :db/sqlite {:dbtype "sqlite" :dbname "resources/superheroes.db"}})
 
 (defmethod ig/init-key
   :server/jetty
@@ -27,7 +28,7 @@
 
 (defmethod ig/init-key :db/sqlite
   [_ config]
-  (:jdbc-url config))
+  (jdbc/get-datasource config))
 
 (defmethod ig/halt-key! :server/jetty
   [_ jetty]
