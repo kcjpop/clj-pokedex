@@ -1,8 +1,8 @@
 (ns cheffy.server
-  (:require [ring.adapter.jetty :as jetty]
+  (:require [cheffy.router :as router]
             [integrant.core :as ig]
-            [cheffy.router :as router]
-            [next.jdbc :as jdbc])
+            [next.jdbc :as jdbc]
+            [ring.adapter.jetty :as jetty])
   (:gen-class))
 
 

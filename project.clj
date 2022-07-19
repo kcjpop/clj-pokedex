@@ -7,6 +7,7 @@
                  [environ "1.2.0"]
                  [hashp "0.2.1"]
                  [integrant "0.8.0"]
+                 [metosin/muuntaja "0.6.8"]
                  [metosin/reitit "0.5.5"]
                  [ring "1.8.1"]
                  [seancorfield/next.jdbc "1.2.659"]
