@@ -1,0 +1,10 @@
+{
+  "calva.customREPLCommandSnippets": [
+    {
+      "name": "Reset system",
+      "key": "r",
+      "ns": "user",
+      "snippet": "(reset)"
+    }
+  ]
+}
