@@ -1,10 +1,10 @@
 (ns cheffy.superheroes.routes
-  (:require [cheffy.superheroes.db :as superheroes-db]))
+  (:require [ring.util.response :as rr]
+            [cheffy.superheroes.db :as superheroes-db]))
 
 (defn get-all [db]
   (fn [req]
-    {:status 200
-     :body (superheroes-db/get-all db)}))
+    (rr/response (superheroes-db/get-all db))))
 
 (defn routes
   [env]
